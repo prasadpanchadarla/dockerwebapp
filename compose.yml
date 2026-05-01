@@ -1,5 +1,5 @@
 services:
-  database:
+  devopsdb:
     container_name: devopsdb
     image: imgdb:v1
     ports:
