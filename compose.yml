@@ -1,13 +1,13 @@
 services:
-  devopsdb:
+  database:
     container_name: devopsdb
-    image: dbimg
+    image: imgdb:v1
     ports:
       - "3306:3306"
 
   application:
     container_name: appcont
-    image: appimg:v1
+    image: imgapp:v1
     ports:
       - "1234:8080"
     depends_on:
