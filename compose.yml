@@ -1,18 +1,14 @@
----
-version: "3"
 services:
- devopsdb:
-   image: prasad231199/mynewapp:dbimage
-   ports:
-     - "3306:3306"
-   deploy:
-      replicas: 3
+  devopsdb:
+    container_name: devopsdb
+    image: dbimg
+    ports:
+      - "3306:3306"
 
- application:
-   image: prasad231199/mynewapp:appimage
-   ports:
-     - "1234:8080"
-   deploy:
-      replicas: 3
-   depends_on:
-     - "devopsdb"
+  application:
+    container_name: appcont
+    image: appimg:v1
+    ports:
+      - "1234:8080"
+    depends_on:
+      - "devopsdb"
