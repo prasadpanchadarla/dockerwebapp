@@ -1,14 +1,16 @@
 services:
   devopsdb:
-    container_name: devopsdb
     image: imgdb:v1
+    deploy:
+      replicas: 3
     ports:
-      - "3306:3306"
+      - 3306
 
   application:
-    container_name: appcont
     image: imgapp:v1
+    deploy:
+      replicas: 3
     ports:
-      - "1234:8080"
+      - 8080
     depends_on:
       - "devopsdb"
