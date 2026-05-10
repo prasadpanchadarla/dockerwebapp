@@ -1,13 +1,13 @@
 services:
   devopsdb:
-    image: imgdb:v1
+    image: dbimg
     deploy:
       replicas: 3
     ports:
       - 3306
 
   application:
-    image: imgapp:v1
+    image: appimg
     deploy:
       replicas: 3
     ports:
