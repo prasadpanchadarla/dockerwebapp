@@ -1,13 +1,13 @@
 services:
   devopsdb:
-    image: dbimg:latest
+    image: prasad231199/newrepo:dbimg
     deploy:
       replicas: 3
     ports:
       - 3306
 
   application:
-    image: appimg:latest
+    image: prasad231199/newrepo:appimg
     deploy:
       replicas: 3
     ports:
